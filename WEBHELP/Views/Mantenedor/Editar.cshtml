@@ -1,0 +1,62 @@
+﻿@model EmpleadoModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">Editar Empleado</div>
+    <div class="card-body">
+
+
+        <form asp-action="Editar" asp-controller="Mantenedor" method="post">
+
+            <input asp-for="IdEmpleado" type="hidden" class="form-control">
+
+            <div class="mb-3">
+                <label class="form-label">Nombres</label>
+                <input asp-for="Nombres" type="text" class="form-control">
+                <span asp-validation-for="Nombres" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellidos</label>
+                <input asp-for="Apellidos" type="text" class="form-control">
+                <span asp-validation-for="Apellidos" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo_Documento</label>
+                <input asp-for="Tipo_Documento" type="text" class="form-control">
+                <span asp-validation-for="Tipo_Documento" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Número de Documento</label>
+                <input asp-for="Identificacion" type="text" class="form-control">
+                <span asp-validation-for="Identificacion" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de Contrato</label>
+                <input asp-for="Fecha_Contrato" type="date" class="form-control">
+                <span asp-validation-for="Fecha_Contrato" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">País</label>
+                <input asp-for="Pais" type="text" class="form-control">
+                <span asp-validation-for="Pais" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Área</label>
+                <input asp-for="Area" type="text" class="form-control">
+                <span asp-validation-for="Area" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Subárea</label>
+                <input asp-for="Subarea" type="text" class="form-control">
+                <span asp-validation-for="Subarea" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>
+
